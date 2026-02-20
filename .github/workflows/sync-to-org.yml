@@ -27,9 +27,9 @@ jobs:
           git config --global user.name "GitHub Actions"
           
           # Add remote using credential helper instead of inline URL
-          git remote add their-org "https://github.com/${TARGET_REPO}.git"
+          git remote add org "https://github.com/${TARGET_REPO}.git"
           git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${GH_TOKEN} | base64 -w 0)"
           
           # Push
-          git push -f --all their-org
-          git push -f --tags their-org
+          git push -f --all org
+          git push -f --tags org
